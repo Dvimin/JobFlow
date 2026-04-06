@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: hh_postgres
+    environment:
+      POSTGRES_DB: hh_analytics
+      POSTGRES_USER: hh_user
+      POSTGRES_PASSWORD: hh_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
